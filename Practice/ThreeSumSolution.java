@@ -1,48 +1,33 @@
 package Practice;
 
 
-    import java.util.*;
+import java.util.*;
 
 public class ThreeSumSolution {
-
-    // Function to find all unique triplets with sum = 0
     public List<List<Integer>> threeSum(int[] nums) {
-        Set<List<Integer>> res = new HashSet<>();
-        if (nums == null || nums.length == 0) {
-            return new ArrayList<>(res);
-        }
-
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums.length < 3) return res;
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 2; i++) {
-            int j = i + 1;
-            int k = nums.length - 1;
-
+            if (i > 0 && nums[i] == nums[i-1]) continue;
+            int j = i + 1, k = nums.length - 1;
             while (j < k) {
                 int sum = nums[i] + nums[j] + nums[k];
-
                 if (sum == 0) {
-                    res.add(Arrays.asList(nums[i], nums[j++], nums[k--]));
-                } else if (sum > 0) {
-                    k--;
-                } else { // sum < 0
-                    j++;
-                }
+                    res.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                    while (j < k && nums[j] == nums[j+1]) j++;
+                    while (j < k && nums[k] == nums[k-1]) k--;
+                    j++; k--;
+                } else if (sum < 0) j++;
+                else k--;
             }
         }
-
-        return new ArrayList<>(res);
+        return res;
     }
 
-    // Main method to test in VS Code
     public static void main(String[] args) {
         ThreeSumSolution sol = new ThreeSumSolution();
-
         int[] nums = {-1, 0, 1, 2, -1, -4};
-        List<List<Integer>> result = sol.threeSum(nums);
-
-        System.out.println(result);
+        System.out.println(sol.threeSum(nums)); // [[-1,-1,2],[-1,0,1]]
     }
 }
-
-    
-
