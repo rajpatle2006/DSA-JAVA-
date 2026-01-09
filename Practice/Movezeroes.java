@@ -1,4 +1,6 @@
-public class MoveZeroes {
+
+package Practice;
+public class Movezeroes {
     public static void moveZeroes(int[] nums) {
         int j = 0;
         for (int i = 0; i < nums.length; i++) {

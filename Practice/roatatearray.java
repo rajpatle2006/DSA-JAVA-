@@ -1,7 +1,6 @@
-// LeetCode 33 - Search in Rotated Sorted Array
-// You can test with a main method below.
+package Practice;
 
-public class Main {
+public class roatatearray {
     public static void main(String[] args) {
         Solution sol = new Solution();
 
