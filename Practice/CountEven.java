@@ -1,4 +1,5 @@
-class G {
+
+package Practice;class G {
     public static void main(String[] args) {
         int[] a = {2,5,8,7};
         int c = 0;

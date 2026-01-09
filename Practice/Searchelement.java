@@ -1,3 +1,4 @@
+package Practice;
 class D {
     static class Node {
         int data; Node next;
