@@ -1,4 +1,4 @@
-package Practice;
+package Practice.Dsa_advance;
 class D {
     static class Node {
         int data; Node next;

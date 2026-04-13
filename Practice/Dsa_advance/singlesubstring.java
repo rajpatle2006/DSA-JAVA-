@@ -1,4 +1,4 @@
-package Practice;
+package Practice.Dsa_advance;
 
 public class singlesubstring {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Practice;
+package Practice.Dsa_advance;
 public class recursivefun
 {
    static int fact(int n)
